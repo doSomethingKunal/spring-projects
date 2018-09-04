@@ -1,0 +1,38 @@
+db.question.insertMany([
+{
+  "qTopic" : "Pivotal-Cloud-Foundry-Intro",
+  "qStatement" : "What is the difference between restarting and restaging?",
+  "answerChoices" : [ {
+    "cStatement" : "Restart will stop application and run the application through the process to create a new droplet, restage will will stop application and start it with the existing droplet.",
+    "isCorrect" : false
+  }, {
+    "cStatement" : "Restart will stop application and start it with the existing droplet, restage will stop application and run the application through the process to create a new droplet.",
+    "isCorrect" : true
+  } ],
+  "answerTip" : {
+    "tipTopic" : "Starting, Restarting, and Restaging Applications",
+    "tipDescription" : "Link to the document: https://docs.cloudfoundry.org/devguide/deploy-apps/start-restart-restage.html"
+  }
+},
+{
+  "qTopic" : "Pivotal-Cloud-Foundry-Intro",
+  "qStatement" : "What is meant by ephemeral?",
+  "answerChoices" : [ {
+    "cStatement" : "Droplets are updated every time, never destroyed.",
+    "isCorrect" : false
+  }, {
+    "cStatement" : "Virtual machines and containers are temporary.",
+    "isCorrect" : true
+  }, {
+    "cStatement" : "Virtual machines and containers are treated as event streams.",
+    "isCorrect" : false
+  }, {
+    "cStatement" : "Virtual machines are backed up every day.",
+    "isCorrect" : false
+  } ],
+  "answerTip" : {
+    "tipTopic" : "Serverless Architecture",
+    "tipDescription" : "Link to the document: https://martinfowler.com/articles/serverless.html"
+  }
+}
+]);

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Display Questions</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/registration.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<form th:action="@{/logout}" method="get">
+		<button class="btn btn-md btn-danger btn-block" name="registration"
+			type="Submit">Logout</button>
+	</form>
+
+	<form th:action="@{/user/test/}" method="post">
+		<div class="container">
+			<table>
+				<th:block th:each="question: ${questions}">
+					<tr>
+						<label th:text="${question.qTopic}" />
+					</tr>
+					<tr>
+						<label th:text="${question.qStatement}" />
+					</tr>
+					<th:block th:each="answerChoice: ${question.answerChoices}">
+						<tr>
+							<input type="checkbox" name="answerChoiceCheckbox"
+								th:value="${answerChoice._id}" />
+							<label th:text="${answerChoice.cStatement}" />
+						</tr>
+					</th:block>
+				</th:block>
+				<tr>
+					<button class="buttonLogin" type="submit">Submit</button>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

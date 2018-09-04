@@ -10,7 +10,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import com.example.demo.web.LoggingAccessDeniedHandler;
 
 
-@EnableWebSecurity(debug=true)
+@EnableWebSecurity
 public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
